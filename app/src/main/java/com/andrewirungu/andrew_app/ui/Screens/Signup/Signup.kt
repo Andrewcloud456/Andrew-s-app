@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -33,15 +34,16 @@ fun SignupScreens(modifier: Modifier,){
 
 
     Column(
-        modifier = androidx.compose.ui.Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+        ) {
         LottieAnimationWidget(R.raw.phone, 300.dp)
 
-        Spacer(modifier = androidx.compose.ui.Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Text(text = "Please Sign in", style = MaterialTheme.typography.headlineMedium)
 
@@ -57,6 +59,7 @@ fun SignupScreens(modifier: Modifier,){
             )
 
         )
+        Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
             value = email,
