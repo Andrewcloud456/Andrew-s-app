@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.andrewirungu.andrew_app.ui.Screens.Forgotpassword.ForgotPasswordScreens
 import com.andrewirungu.andrew_app.ui.Screens.Login.LoginScreen
+import com.andrewirungu.andrew_app.ui.Screens.Signup.SignupScreens
 import com.andrewirungu.andrew_app.ui.theme.Andrew_AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Andrew_AppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ForgotPasswordScreens(modifier = Modifier.padding(innerPadding
+                    SignupScreens(modifier = Modifier.padding(innerPadding
                     ))
 
                 }

@@ -69,11 +69,13 @@ fun ForgotPasswordScreens(modifier: Modifier) {
             colors = OutlinedTextFieldDefaults.colors(
                 focusedTextColor = PurpleGrey80,
                 unfocusedTextColor = secondaryColor,
-                focusedBorderColor = primaryColor
-                )
+                focusedBorderColor = primaryColor,
+                ),
 
 
-)
+
+            )
+        Spacer(modifier = Modifier.height(20.dp))
         OutlinedButton(
             onClick = {},
             border = ButtonDefaults.outlinedButtonBorder( enabled = false),
