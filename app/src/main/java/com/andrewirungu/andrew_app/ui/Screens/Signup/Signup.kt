@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -19,7 +22,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.andrewirungu.andrew_app.R
 import com.andrewirungu.andrew_app.ui.Components.LottieAnimationWidget
 import com.andrewirungu.andrew_app.ui.theme.PurpleGrey80
@@ -27,7 +35,7 @@ import com.andrewirungu.andrew_app.ui.theme.primaryColor
 import com.andrewirungu.andrew_app.ui.theme.secondaryColor
 
 @Composable
-fun SignupScreens(modifier: Modifier,){
+fun SignupScreens(navController: NavHostController, modifier: Modifier,){
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -71,8 +79,43 @@ fun SignupScreens(modifier: Modifier,){
                 unfocusedTextColor = secondaryColor,
                 focusedBorderColor = primaryColor,
             )
-
         )
+        Spacer(modifier = Modifier.height(20.dp))
+
+        OutlinedTextField(
+            value = password,
+            onValueChange = {password = it},
+            label = {Text("Enter Password")},
+            shape = RoundedCornerShape(24.dp),
+            leadingIcon = {
+                Icon(
+                    imageVector = ImageVector.vectorResource(R.drawable.outline_password_24),
+                    contentDescription = "Password"
+                )
+            },
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = PurpleGrey80,
+                unfocusedTextColor = secondaryColor,
+                focusedBorderColor = primaryColor,
+            ),
+            visualTransformation = PasswordVisualTransformation()
+
+
+
+            )
+        Spacer(modifier = Modifier.height(20.dp))
+
+
+        OutlinedButton(
+            onClick = {},
+            shape = RoundedCornerShape(24.dp),
+            colors = ButtonDefaults.outlinedButtonColors(
+                contentColor = Color(0xFFFFFFFF),
+                containerColor = primaryColor
+            )
+        ) { Text(text = "Sign Up")}
+
+
 
     }
 

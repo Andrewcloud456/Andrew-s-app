@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.andrewirungu.andrew_app.ui.Navigation.AppNavigation
 import com.andrewirungu.andrew_app.ui.Screens.Forgotpassword.ForgotPasswordScreens
 import com.andrewirungu.andrew_app.ui.Screens.Login.LoginScreen
 import com.andrewirungu.andrew_app.ui.Screens.Signup.SignupScreens
@@ -22,8 +24,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Andrew_AppTheme {
+                var navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    SignupScreens(modifier = Modifier.padding(innerPadding
+                    AppNavigation(navController, modifier = Modifier.padding(innerPadding
                     ))
 
                 }

@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.andrewirungu.andrew_app.R
 import com.andrewirungu.andrew_app.ui.Components.LottieAnimationWidget
 import com.andrewirungu.andrew_app.ui.theme.PurpleGrey40
@@ -37,7 +38,7 @@ import com.andrewirungu.andrew_app.ui.theme.secondaryColor
 
 
 @Composable
-fun ForgotPasswordScreens(modifier: Modifier) {
+fun ForgotPasswordScreens(navController: NavHostController, modifier: Modifier) {
     var emailInput by remember { mutableStateOf(TextFieldValue("")) }
 
     Column(

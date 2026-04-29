@@ -5,6 +5,7 @@ import android.R.attr.text
 import android.R.attr.visibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,6 +20,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,16 +38,19 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.andrewirungu.andrew_app.R
 import com.andrewirungu.andrew_app.ui.Components.LottieAnimationWidget
+import com.andrewirungu.andrew_app.ui.Navigation.Routes
 import com.andrewirungu.andrew_app.ui.theme.primaryColor
+import com.andrewirungu.andrew_app.ui.theme.secondaryColor
 
 @Composable
-fun LoginScreen(modifier: Modifier) {
+fun LoginScreen(navController: NavHostController, modifier: Modifier) {
     var emailInput by remember { mutableStateOf(TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(TextFieldValue("")) }
     var visibility by remember {mutableStateOf(false)}
@@ -72,6 +77,7 @@ fun LoginScreen(modifier: Modifier) {
 
                 )
         )
+        Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
             value = emailInput,
@@ -140,5 +146,33 @@ fun LoginScreen(modifier: Modifier) {
             ),
             shape = RoundedCornerShape(24.dp)
         ) {Text(text = "Login")}
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Row{
+            TextButton(
+                onClick = { navController.navigate(Routes.ForgotPassword.name) },
+            ){Text(text = "Forgot Password",
+                color = secondaryColor,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            )
+            }
+
+
+            TextButton(
+                onClick = { navController.navigate(Routes.Signup.name) },
+            ){Text(text = "Sign Up",
+                color = secondaryColor,
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+                )}
+
+
+        }
     }
 }
