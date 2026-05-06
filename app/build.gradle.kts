@@ -40,6 +40,18 @@ android {
 }
 
 dependencies {
+    implementation(libs.ktor.client.android)
+    implementation(platform(libs.bom))
+    implementation(libs.postgrest.kt)
+    implementation(libs.auth.kt)
+    implementation(libs.realtime.kt)
+    implementation(libs.storage.kt)
+    implementation(libs.ktor.client.android)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+
+
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.lottie.compose)
@@ -58,4 +70,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
 }
