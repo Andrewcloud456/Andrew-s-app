@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.andrewirungu.andrew_app.R
 import com.andrewirungu.andrew_app.ui.Components.LottieAnimationWidget
+import com.andrewirungu.andrew_app.ui.Navigation.Routes
 import com.andrewirungu.andrew_app.ui.theme.PurpleGrey80
 import com.andrewirungu.andrew_app.ui.theme.primaryColor
 import com.andrewirungu.andrew_app.ui.theme.secondaryColor
@@ -107,7 +108,7 @@ fun SignupScreens(navController: NavHostController, modifier: Modifier,){
 
 
         OutlinedButton(
-            onClick = {},
+            onClick = {navController.navigate(Routes.Home.name)},
             shape = RoundedCornerShape(24.dp),
             colors = ButtonDefaults.outlinedButtonColors(
                 contentColor = Color(0xFFFFFFFF),

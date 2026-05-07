@@ -1,10 +1,14 @@
 package com.andrewirungu.andrew_app.ui.Navigation
 
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.andrewirungu.andrew_app.Mainscreen.AccountScreens
+import com.andrewirungu.andrew_app.Mainscreen.FinanceHomePage
+
 
 import com.andrewirungu.andrew_app.ui.Onboarding.OnboardingScreen
 import com.andrewirungu.andrew_app.ui.Screens.Forgotpassword.ForgotPasswordScreens
@@ -22,5 +26,7 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier){
         composable (Routes.Login.name){ LoginScreen(navController, modifier) }
         composable (Routes.Signup.name){ SignupScreens(navController, modifier) }
         composable (Routes.ForgotPassword.name){ ForgotPasswordScreens(navController, modifier) }
+        composable(Routes.Home.name){ FinanceHomePage(navController,modifier) }
+        composable(Routes.Account.name){ AccountScreens(navController,modifier) }
     }
 }

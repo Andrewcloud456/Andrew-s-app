@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -40,6 +41,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
+    implementation(libs.sdk.core)
     implementation(libs.ktor.client.android)
     implementation(platform(libs.bom))
     implementation(libs.postgrest.kt)
@@ -49,6 +55,14 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+    implementation(libs.supabase.kt)
+
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.kotlinx.coroutines.android)
 
 
 

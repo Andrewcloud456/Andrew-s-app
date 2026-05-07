@@ -6,6 +6,7 @@ enum class Routes{
     ForgotPassword,
     Home,
     Onboarding,
-    About,
+
+    Account,
 
 }

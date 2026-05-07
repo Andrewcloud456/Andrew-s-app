@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339195381310",
+    "project_id": "finance-management-924c2",
+    "storage_bucket": "finance-management-924c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339195381310:android:b45b31efe8ffa73b7cb36f",
+        "android_client_info": {
+          "package_name": "com.andrewirungu.andrew_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbPtuX-gIpGdmZg6XnMnSN7D1isd3Rk3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

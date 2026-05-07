@@ -139,7 +139,7 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier) {
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedButton(
-            onClick = {},
+            onClick = {navController.navigate(Routes.Home.name)},
             colors = ButtonDefaults.outlinedButtonColors(
                 contentColor = Color(0xFFFFFFFF),
                 containerColor = primaryColor

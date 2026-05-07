@@ -13,3 +13,5 @@ val Pink40 = Color(0xFF7D5260)
 val primaryColor = Color(0xFF419D78)
 
 var secondaryColor = Color(0xFFF0C087)
+
+var AuxilliaryColor = Color(0xFFFC8A2C8)
